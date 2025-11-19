@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palmera Enana - Phoenix roebelenii | Guía Completa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css para animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color1: #DAF7A6;
+            --color2: #FFC300;
+            --color3: #FF5733;
+            --color4: #C70039;
+            --color5: #900C3F;
+            --color6: #581845;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--color6), var(--color5));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(88, 24, 69, 0.85), rgba(144, 12, 63, 0.8)), 
+                        url('https://images.unsplash.com/photo-1599580428467-7a80f6a84171?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            color: var(--color5);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--color2), var(--color3));
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--color6), var(--color5));
+            color: white;
+            font-weight: bold;
+            padding: 15px 20px;
+            border: none;
+        }
+        
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--color2), var(--color3));
+            color: white;
+            font-size: 30px;
+        }
+        
+        .color-box {
+            height: 30px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .color1 { background-color: var(--color1); }
+        .color2 { background-color: var(--color2); }
+        .color3 { background-color: var(--color3); }
+        .color4 { background-color: var(--color4); }
+        .color5 { background-color: var(--color5); }
+        .color6 { background-color: var(--color6); }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--color6), var(--color5));
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color3), var(--color4));
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--color4), var(--color5));
+            transform: scale(1.05);
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            background: linear-gradient(135deg, var(--color2), var(--color3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            color: var(--color4);
+            margin-right: 10px;
+        }
+        
+        .problem-card {
+            border-left: 4px solid var(--color3);
+        }
+        
+        .solution-card {
+            border-left: 4px solid var(--color2);
+        }
+        
+        .care-tip {
+            background-color: rgba(218, 247, 166, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color5);
+        }
+        
+        .stats-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .environment-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            padding: 20px;
+            height: 100%;
+        }
+        
+        .toxicity-badge {
+            background-color: var(--color2);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .seasonal-care {
+            border-top: 3px solid var(--color4);
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">
+                <i class="fas fa-pagelines me-2"></i>Phoenix roebelenii
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#descripcion">Descripción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cuidados">Cuidados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#problemas">Problemas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ubicacion">Ubicación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galería</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Palmera Enana</h1>
+                    <h2 class="h3 mb-4 animate__animated animate__fadeInUp">Phoenix roebelenii</h2>
+                    <p class="lead animate__animated animate__fadeInUp animate__delay-1s">La palmera ornamental perfecta para espacios interiores y exteriores. Elegancia tropical en formato compacto.</p>
+                    <a href="#descripcion" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp animate__delay-2s">
+                        <i class="fas fa-leaf me-2"></i>Descubre más
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas Rápidas -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stats-number">2-4 m</div>
+                    <div class="stats-label">Altura máxima</div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stats-number">15 cm</div>
+                    <div class="stats-label">Diámetro tronco</div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stats-number">15-25°C</div>
+                    <div class="stats-label">Temperatura ideal</div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="stats-number">5-10 años</div>
+                    <div class="stats-label">Vida en maceta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descripción -->
+    <section id="descripcion" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Descripción Botánica</h2>
+                    <p class="lead">Conoce a fondo las características de esta elegante palmera ornamental</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="card animate__animated animate__fadeInLeft">
+                        <div class="card-header">
+                            <i class="fas fa-info-circle me-2"></i>Características Principales
+                        </div>
+                        <div class="card-body">
+                            <p>La <strong>Phoenix roebelenii</strong> es una de las palmeras ornamentales más valoradas a nivel mundial, especialmente por su capacidad de prosperar tanto en espacios exteriores como en macetas interiores bien iluminadas.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-tree feature-icon"></i>
+                                    <strong>Nombre común:</strong> Palmera Enana, Palmera Pigmea, Palmera de Roebelen
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-seedling feature-icon"></i>
+                                    <strong>Nombre científico:</strong> Phoenix roebelenii
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-ruler feature-icon"></i>
+                                    <strong>Tronco:</strong> Delgado y fibroso (hasta 15 cm de diámetro)
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-leaf feature-icon"></i>
+                                    <strong>Hojas:</strong> Frondas pinnadas de color verde brillante y profundo
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-arrows-alt-v feature-icon"></i>
+                                    <strong>Altura:</strong> En maceta: 1.5-3 metros; en hábitat natural: hasta 5 metros
+                                </li>
+                            </ul>
+                            <p class="mt-3">Su popularidad reside en que ofrece la sensación exuberante de una palmera tropical sin exigir el espacio monumental de otras especies del género Phoenix.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Palmera Enana" class="img-fluid rounded shadow animate__animated animate__fadeInRight">
+                        </div>
+                        <div class="col-12">
+                            <div class="environment-card animate__animated animate__fadeInUp">
+                                <h4><i class="fas fa-globe-americas feature-icon"></i>Origen y Distribución</h4>
+                                <p>Es nativa de las regiones tropicales y subtropicales del Sudeste Asiático, con poblaciones silvestres en Laos, Vietnam y el sur de China (provincia de Yunnan).</p>
+                                <p>Crece naturalmente en áreas boscosas a lo largo de los ríos, donde el clima es cálido y la humedad ambiental es elevada.</p>
+                                <p class="mb-0">Hoy en día se cultiva en regiones tropicales, subtropicales y templadas cálidas de todo el mundo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuidados -->
+    <section id="cuidados" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Guía de Cuidados</h2>
+                    <p class="lead">Aprende a mantener tu Palmera Enana saludable y vibrante</p>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 animate__animated animate__fadeInUp">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <h4>Luz</h4>
+                            <p>Necesita luz brillante, incluso sol directo por algunas horas al día si está en exteriores. En interiores, colócala cerca de una ventana luminosa.</p>
+                            <div class="care-tip">
+                                <strong>Consejo:</strong> Rota la maceta regularmente para un crecimiento uniforme.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h4>Riego</h4>
+                            <p>Riego moderado. Permite que el sustrato se seque por completo en su capa superficial (3-5 cm) antes de volver a regar.</p>
+                            <div class="care-tip">
+                                <strong>Precaución:</strong> El exceso de agua causa pudrición de raíces.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-thermometer-half"></i>
+                            </div>
+                            <h4>Temperatura</h4>
+                            <p>Ideal entre 18°C y 25°C. Tolera heladas ligeras ocasionales (hasta -3°C en ejemplares maduros). Proteger de corrientes frías.</p>
+                            <div class="care-tip">
+                                <strong>Nota:</strong> En invierno, reducir riego en ambientes fríos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-header">
+                            <i class="fas fa-clipboard-list me-2"></i>Sustrato y Abonado
+                        </div>
+                        <div class="card-body">
+                            <h5>Sustrato ideal</h5>
+                            <p>Debe ser rico en materia orgánica, pero con excelente drenaje para prevenir la asfixia radicular. Una mezcla para palmeras o cactus funciona bien.</p>
+                            
+                            <h5>Abonado</h5>
+                            <p>Fundamental durante la temporada de crecimiento (primavera a principios de otoño).</p>
+                            <ul>
+                                <li>Usar fertilizante balanceado (NPK 10-10-10) o específico para palmeras</li>
+                                <li>Aplicar mensualmente durante la temporada de crecimiento</li>
+                                <li>Reducir o suspender en invierno</li>
+                            </ul>
+                            
+                            <h5>Trasplante</h5>
+                            <p>Solo cada 2 a 4 años, cuando las raíces comienzan a compactarse significativamente. La primavera es el mejor momento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 animate__animated animate__fadeInRight">
+                        <div class="card-header">
+                            <i class="fas fa-calendar-alt me-2"></i>Cuidados por Estación
+                        </div>
+                        <div class="card-body">
+                            <div class="seasonal-care">
+                                <h5><i class="fas fa-sun text-warning me-2"></i>Primavera-Verano</h5>
+                                <ul>
+                                    <li>Riego regular (dejar secar entre riegos)</li>
+                                    <li>Abonado mensual</li>
+                                    <li>Poda de hojas secas o dañadas</li>
+                                    <li>Proteger del sol intenso en horas pico</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="seasonal-care">
+                                <h5><i class="fas fa-snowflake text-info me-2"></i>Otoño-Invierno</h5>
+                                <ul>
+                                    <li>Reducir riego significativamente</li>
+                                    <li>Suspender abonado</li>
+                                    <li>Proteger de heladas</li>
+                                    <li>Mantener alejada de calefactores</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="toxicity-badge">
+                                <i class="fas fa-exclamation-triangle me-1"></i> No tóxica para mascotas
+                            </div>
+                            <p class="small">La Phoenix roebelenii no es tóxica para perros y gatos, según la ASPCA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problemas Comunes -->
+    <section id="problemas" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Problemas Comunes y Soluciones</h2>
+                    <p class="lead">Identifica y soluciona los problemas más frecuentes</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card problem-card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-body">
+                            <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i>Puntas marrones en las hojas</h5>
+                            <p><strong>Causa:</strong> Humedad baja, exceso de flúor en el agua o acumulación de sales.</p>
+                            <p><strong>Solución:</strong> Pulverizar las hojas regularmente, usar agua filtrada o dejar reposar el agua del grifo 24 horas antes de usar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card problem-card h-100 animate__animated animate__fadeInRight">
+                        <div class="card-body">
+                            <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i>Hojas amarillas</h5>
+                            <p><strong>Causa:</strong> Exceso de riego, deficiencia nutricional o iluminación insuficiente.</p>
+                            <p><strong>Solución:</strong> Revisar el drenaje, ajustar el programa de riego y fertilizar regularmente durante la temporada de crecimiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card problem-card h-100 animate__animated animate__fadeInLeft">
+                        <div class="card-body">
+                            <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i>Plagas (ácaros, cochinillas)</h5>
+                            <p><strong>Causa:</strong> Ambiente seco, falta de circulación de aire o plantas infectadas cercanas.</p>
+                            <p><strong>Solución:</strong> Aumentar la humedad ambiental, limpiar las hojas con agua jabonosa y usar insecticidas naturales si es necesario.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card problem-card h-100 animate__animated animate__fadeInRight">
+                        <div class="card-body">
+                            <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i>Crecimiento lento</h5>
+                            <p><strong>Causa:</strong> Temperaturas bajas, falta de nutrientes o maceta demasiado pequeña.</p>
+                            <p><strong>Solución:</strong> Asegurar temperaturas adecuadas, fertilizar regularmente y trasplantar si es necesario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación Ideal -->
+    <section id="ubicacion" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Ubicación Ideal</h2>
+                    <p class="lead">Dónde colocar tu Palmera Enana para un crecimiento óptimo</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 animate__animated animate__fadeInUp">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Interior</h4>
+                            <p>Ideal para salones, oficinas y recibidores. Colocar cerca de ventanas luminosas.</p>
+                            <ul class="text-start">
+                                <li>Evitar corrientes de aire</li>
+                                <li>Lejos de calefactores/aire acondicionado</li>
+                                <li>Pulverizar hojas regularmente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-umbrella-beach"></i>
+                            </div>
+                            <h4>Exterior en Maceta</h4>
+                            <p>Perfecta para patios, terrazas y balcones. Proteger del sol intenso del mediodía.</p>
+                            <ul class="text-start">
+                                <li>Semisombra o sol filtrado</li>
+                                <li>Proteger de heladas invernales</li>
+                                <li>Trasladar al interior en climas fríos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h4>Jardín</h4>
+                            <p>En climas cálidos, puede plantarse directamente en el suelo.</p>
+                            <ul class="text-start">
+                                <li>Suelo bien drenado</li>
+                                <li>Protección contra vientos fuertes</li>
+                                <li>Riego regular hasta establecerse</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Galería</h2>
+                    <p class="lead">Inspírate con estas imágenes de la Palmera Enana en diferentes ambientes</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__zoomIn">
+                        <img src="https://images.unsplash.com/photo-1599580428467-7a80f6a84171?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                             class="card-img-top" alt="Palmera Enana en interior">
+                        <div class="card-body">
+                            <h5 class="card-title">Decoración de Interiores</h5>
+                            <p class="card-text">Perfecta para añadir un toque tropical a cualquier espacio interior.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__zoomIn animate__delay-1s">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                             class="card-img-top" alt="Detalle de hojas de Palmera Enana">
+                        <div class="card-body">
+                            <h5 class="card-title">Frondas Pinnadas</h5>
+                            <p class="card-text">Hojas de verde brillante que se arquean elegantemente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card animate__animated animate__zoomIn animate__delay-2s">
+                        <img src="https://images.unsplash.com/photo-1598880940080-ff0e7656f6d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+                             class="card-img-top" alt="Palmera Enana en jardín">
+                        <div class="card-body">
+                            <h5 class="card-title">En Exteriores</h5>
+                            <p class="card-text">Ideal para jardines, patios y bordes de piscina en climas cálidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3><i class="fas fa-pagelines me-2"></i>Phoenix roebelenii</h3>
+                    <p>La palmera perfecta para interior y exterior. Elegancia tropical en formato compacto.</p>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-pinterest fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#descripcion" class="text-white">Descripción</a></li>
+                        <li><a href="#cuidados" class="text-white">Cuidados</a></li>
+                        <li><a href="#problemas" class="text-white">Problemas</a></li>
+                        <li><a href="#ubicacion" class="text-white">Ubicación</a></li>
+                        <li><a href="#galeria" class="text-white">Galería</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contacto</h5>
+                    <p>
+                        <i class="fas fa-envelope me-2"></i>info@palmeraenana.com<br>
+                        <i class="fas fa-phone me-2"></i>+34 123 456 789
+                    </p>
+                    <button class="btn btn-outline-light btn-sm">
+                        <i class="fas fa-download me-1"></i> Guía de Cuidados
+                    </button>
+                </div>
+            </div>
+            <div class="row pt-4 border-top">
+                <div class="col-12 text-center">
+                    <p>&copy; 2023 Palmera Enana - Phoenix roebelenii. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para animaciones al hacer scroll -->
+    <script>
+        // Activar animaciones cuando los elementos son visibles
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animation = entry.target.getAttribute('data-animation');
+                        if (animation) {
+                            entry.target.classList.add(animation);
+                        } else {
+                            // Si no tiene animación específica, usar fadeInUp por defecto
+                            if (!entry.target.classList.contains('animate__zoomIn')) {
+                                entry.target.classList.add('animate__fadeInUp');
+                            }
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
